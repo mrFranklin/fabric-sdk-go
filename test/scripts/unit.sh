@@ -22,6 +22,7 @@ REPO="github.com/hyperledger/fabric-sdk-go"
 
 # Packages to include in test run
 PKGS=`$GO_CMD list $REPO... 2> /dev/null | \
+      grep -e ^github.com/hyperledger/fabric-sdk-go/ -e ^github.com/hyperledger/fabric-sdk-go$ \
       grep -v ^$REPO$ | \
       grep -v ^$REPO/api/ | grep -v ^$REPO/.*/api[^/]*$ | \
       grep -v ^$REPO/.*/mocks$ | \
